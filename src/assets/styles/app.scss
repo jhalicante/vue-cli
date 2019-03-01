@@ -1,0 +1,125 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css');
+@import url('https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900');
+@import "./utils.scss";
+
+html,body {
+    padding:0;
+    margin:0;
+}
+
+#app {
+    font-family: "Avenir", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    background: $bgColor;
+    
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      #logo {
+        img {
+          width: 100%;
+        }
+      }
+  
+      .menu-button {
+        position: fixed;
+        right: 0;
+        z-index: 999;
+        margin: 1em;
+        padding: 0;
+        width: 2.5em;
+        height: 2.25em;
+        border: none;
+        text-indent: 2.5em;
+        font-size: 1.5em;
+        color: #666;
+        background: transparent;
+        :before {
+          content: '';
+          position: absolute;
+          top: 0.5em;
+          right: 0.5em;
+          bottom: 0.5em;
+          left: 0.5em;
+          background: linear-gradient(#373a47 20%, transparent 20%, transparent 40%, #373a47 40%, #373a47 60%, transparent 60%, transparent 80%, #373a47 80%);
+          z-index: 999999;
+        }
+      }
+    }
+    
+
+    #nav {
+        .hideNav {
+            right: -200px;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+        }
+        background: $navBgColor;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 320px;
+        height: 100%;
+        z-index: 1000;
+        -webkit-animation-duration: 1s;
+        animation-duration: 1s;
+    
+        .close-button {
+            position: absolute;
+            right: 6%;
+            top: 2%;
+            background: transparent;
+            padding: 10px;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            :before{
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            background: #bdc3c7;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            }
+            :after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            height: 100%;
+            top: 0;
+            left: 50%;
+            background: #bdc3c7;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            }
+        }
+        .nav-links {
+            margin-top:200px;
+            a {
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 1.2em;
+                line-height: 3;
+                text-align: left;
+                color: #b8b7ad;
+                display: grid;
+                padding-left: 2.0em;
+                text-decoration: none;
+        
+                &.router-link-exact-active {
+                    color: $navActiveColor;
+                }
+            }
+        }
+      
+    }
+  }
